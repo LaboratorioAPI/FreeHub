@@ -5,6 +5,12 @@ end
 
 
 
+-- Status
+if game:HttpGet("https://raw.githubusercontent.com/LaboratorioAPI/API/refs/heads/main/not/0001.lua"):find("true") then
+
+else
+	game.Players.LocalPlayer:Kick(".gg/TZhdemZcFS")
+end
 
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
@@ -217,6 +223,7 @@ function DiscordLib:Window(text)
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Title.TextSize = 13.000
 	Title.TextXAlignment = Enum.TextXAlignment.Left
+	
 
 	CloseBtn.Name = "CloseBtn"
 	CloseBtn.Parent = TopFrame
@@ -3272,3 +3279,6 @@ function DiscordLib:Window(text)
 	return ServerHold
 end
 return DiscordLib
+
+
+
