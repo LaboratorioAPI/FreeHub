@@ -137,7 +137,7 @@ function DiscordLib:Window(text)
 	ImageButtonDmz.Image = "rbxassetid://99009775106263"
 	ImageButtonDmz.Visible = false
 	ImageButtonDmz.MouseButton1Up:Connect(function()
-		Discord.Visible = true
+		Discord.Enabled = true
 		wait(0.5)
 		ImageButtonDmz.Visible = false
 	end)
