@@ -257,6 +257,7 @@ function DiscordLib:Window(text)
 	MinimizeBtn.AutoButtonColor = false
 	MinimizeBtn.MouseButton1Up:Connect(function()
 		ImageButtonDmz.Visible = true
+		Discord:Destroy()
 	end)
 
 	MinimizeIcon.Name = "MinimizeLabel"
