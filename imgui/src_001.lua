@@ -1,3 +1,48 @@
+if game.CoreGui:FindFirstChild("Discord") then
+	game.CoreGui.Discord:Destroy()
+	game.CoreGui.DiscordDmz:Destroy()
+end
+
+local button = ImageButtonDmz
+local UserInputService = game:GetService("UserInputService")
+
+local dragging = false
+local dragStart
+local startOffset
+
+local function getAbsolutePosition(guiObject)
+	local absPos = guiObject.AbsolutePosition
+	local absSize = guiObject.AbsoluteSize
+	return absPos, absSize
+end
+
+local function update(input)
+	local delta = input.Position - dragStart
+	button.Position = UDim2.new(0, startOffset.X + delta.X, 0, startOffset.Y + delta.Y)
+end
+
+button.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		dragStart = input.Position
+		startOffset = button.AbsolutePosition
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+		update(input)
+	end
+end)
+
+
+
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -111,6 +156,25 @@ function DiscordLib:Window(text)
 	local ServersHoldLayout = Instance.new("UIListLayout")
 	local ServersHoldPadding = Instance.new("UIPadding")
 	local TopFrameHolder = Instance.new("Frame")
+	
+	
+	local ScreenGui = Instance.new("ScreenGui")
+	local ImageButtonDmz = Instance.new("ImageButton")
+
+	ScreenGui.Parent = game.CoreGui
+	ScreenGui.Name = "DiscordDmz"
+	ImageButtonDmz.Parent = ScreenGui
+	ImageButtonDmz.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageButtonDmz.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageButtonDmz.BorderSizePixel = 0
+	ImageButtonDmz.Position = UDim2.new(0.473885357, 0, 0.462406009, 0)
+	ImageButtonDmz.Size = UDim2.new(0, 40, 0, 40)
+	ImageButtonDmz.Image = "rbxassetid://99009775106263"
+	ImageButtonDmz.Visible = false
+	ImageButtonDmz.MouseButton1Up:Connect(function()
+		Discord.Visible = true
+		ImageButtonDmz = false
+	end)
 
 	MainFrame.Name = "MainFrame"
 	MainFrame.Parent = Discord
@@ -163,6 +227,7 @@ function DiscordLib:Window(text)
 	CloseBtn.AutoButtonColor = false
 	CloseBtn.MouseButton1Up:Connect(function()
 		Discord:Destroy()
+		ImageButtonDmz:Destroy()
 	end)
 
 	CloseIcon.Name = "CloseIcon"
@@ -186,6 +251,9 @@ function DiscordLib:Window(text)
 	MinimizeBtn.TextSize = 14.000
 	MinimizeBtn.BorderSizePixel = 0
 	MinimizeBtn.AutoButtonColor = false
+	MinimizeBtn.MouseButton1Up:Connect(function()
+		ImageButtonDmz.Visible = true
+	end)
 
 	MinimizeIcon.Name = "MinimizeLabel"
 	MinimizeIcon.Parent = MinimizeBtn
@@ -289,40 +357,7 @@ function DiscordLib:Window(text)
 	ServersHoldPadding.Parent = ServersHold
 
 
-	MinimizeBtn.MouseEnter:Connect(
-		function()
-			MinimizeBtn.BackgroundColor3 = Color3.fromRGB(40, 43, 46)
-		end
-	)
-
-	MinimizeBtn.MouseLeave:Connect(
-		function()
-			MinimizeBtn.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
-		end
-	)
-
-	MinimizeBtn.MouseButton1Click:Connect(
-		function()
-			if minimized == false then
-				MainFrame:TweenSize(
-					UDim2.new(0, 681, 0, 22),
-					Enum.EasingDirection.Out,
-					Enum.EasingStyle.Quart,
-					.3,
-					true
-				)
-			else
-				MainFrame:TweenSize(
-					UDim2.new(0, 681, 0, 396),
-					Enum.EasingDirection.Out,
-					Enum.EasingStyle.Quart,
-					.3,
-					true
-				)
-			end
-			minimized = not minimized
-		end
-	)
+	
 
 	local SettingsOpenBtn = Instance.new("TextButton")
 	local SettingsOpenBtnIco = Instance.new("ImageLabel")
