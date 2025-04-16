@@ -3,43 +3,6 @@ if game.CoreGui:FindFirstChild("Discord") then
 	game.CoreGui.DiscordDmz:Destroy()
 end
 
-local button = ImageButtonDmz
-local UserInputService = game:GetService("UserInputService")
-
-local dragging = false
-local dragStart
-local startOffset
-
-local function getAbsolutePosition(guiObject)
-	local absPos = guiObject.AbsolutePosition
-	local absSize = guiObject.AbsoluteSize
-	return absPos, absSize
-end
-
-local function update(input)
-	local delta = input.Position - dragStart
-	button.Position = UDim2.new(0, startOffset.X + delta.X, 0, startOffset.Y + delta.Y)
-end
-
-button.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		dragging = true
-		dragStart = input.Position
-		startOffset = button.AbsolutePosition
-
-		input.Changed:Connect(function()
-			if input.UserInputState == Enum.UserInputState.End then
-				dragging = false
-			end
-		end)
-	end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-		update(input)
-	end
-end)
 
 
 
@@ -160,6 +123,8 @@ function DiscordLib:Window(text)
 	
 	local ScreenGui = Instance.new("ScreenGui")
 	local ImageButtonDmz = Instance.new("ImageButton")
+	
+	
 
 	ScreenGui.Parent = game.CoreGui
 	ScreenGui.Name = "DiscordDmz"
@@ -174,6 +139,45 @@ function DiscordLib:Window(text)
 	ImageButtonDmz.MouseButton1Up:Connect(function()
 		Discord.Visible = true
 		ImageButtonDmz = false
+	end)
+
+
+	local button = ImageButtonDmz
+	local UserInputService = game:GetService("UserInputService")
+
+	local dragging = false
+	local dragStart
+	local startOffset
+
+	local function getAbsolutePosition(guiObject)
+		local absPos = guiObject.AbsolutePosition
+		local absSize = guiObject.AbsoluteSize
+		return absPos, absSize
+	end
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		button.Position = UDim2.new(0, startOffset.X + delta.X, 0, startOffset.Y + delta.Y)
+	end
+
+	button.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startOffset = button.AbsolutePosition
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	UserInputService.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			update(input)
+		end
 	end)
 
 	MainFrame.Name = "MainFrame"
