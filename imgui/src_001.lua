@@ -59,7 +59,6 @@ function DescodificarBinario(binario)
 	return texto
 end
 
-local scripttrue = game:HttpGet("https://raw.githubusercontent.com/LaboratorioAPI/API/refs/heads/main/not/0001.lua")
 local DESCONPILAR_BINARIO = DescodificarBinario(scripttrue)
 local DESCONPILAR_DRECK = ConverterOF(DESCONPILAR_BINARIO)
 DESCONPILAR_DRECK = DESCONPILAR_DRECK:match("^%s*(.-)%s*$")
@@ -1208,7 +1207,7 @@ function DiscordLib:Window(text)
 	DiscordInfo.Position = UDim2.new(0.304721028, 0, 0.821333349, 0)
 	DiscordInfo.Size = UDim2.new(0, 133, 0, 44)
 	DiscordInfo.Font = Enum.Font.Gotham
-	DiscordInfo.Text = "Criador desse projeto dreck          https://dreckmodzofc.github.io/Site/           https://discord.com/invite/TZhdemZcFS     "
+	DiscordInfo.Text = "Criador https://discord.com/invite/TZhdemZcFS  Youtube: Dreck Modz"
 	DiscordInfo.TextColor3 = Color3.fromRGB(101, 108, 116)
 	DiscordInfo.TextSize = 13.000
 	DiscordInfo.TextWrapped = true
