@@ -14,6 +14,9 @@ end
 ]]
 
 
+
+
+
 local letraParaNumero = {
 	A = "7BzLnPm", B = "7K3ctZP", C = "7mY2P3U", D = "794JppF", E = "7zPg05u", F = "7q9oJIc",
 	G = "7zbTIbs", H = "7S5fsFd", I = "7SQBtH0", J = "73sx8QL", K = "7M9inyO", L = "7tBGAcX",
@@ -23,14 +26,15 @@ local letraParaNumero = {
 	e = "7r9FNYN", f = "72SHblA", g = "7MGRUcH", h = "7DCh71w", i = "7iiWQj7", j = "7J1ZXER",
 	k = "7zOcIsS", l = "7LM2xNT", m = "7jG9P4j", n = "7z3CMS8", o = "7V3CONo", p = "7U6O3xP",
 	q = "7Q5pFNc", r = "7koF7QE", s = "7MXtpo3", t = "7YsDKBq", u = "7AgFdq1", v = "7kwbAHW",
-	w = "7a77cVP", x = "74tUkih", y = "7fe3YtO", z = "7enkBib", [" "] = "7DomtXj", ["$"] = "7SINA$$", ["/"] = "7死d死死死死", ["."] = "7死死死", [":"] = "7死死死dreckcomedorxereca"
+	w = "7a77cVP", x = "74tUkih", y = "7fe3YtO", z = "7enkBib", [" "] = "7DomtXj", ["$"] = "7SINA$$", 
+	["/"] = "7死dOcI死死死死", ["."] = "7死RUc死死", [":"] = "7死死死drAdawdvgneca", 
+	["0"] = "7numbc死er", ["1"] = "7nc死umber", ["2"] = "7nuc死mber", ["_"] = "7çhjmm死r"
 }
 
 local numeroParaLetra = {}
 for k, v in pairs(letraParaNumero) do
 	numeroParaLetra[v] = k
 end
-
 
 local function ConverterOF(ofuscado)
 	local resultado = ""
@@ -46,13 +50,14 @@ local function ConverterOF(ofuscado)
 end
 
 
-
-local texto2 = "7DCh71w@7YsDKBq@7YsDKBq@7U6O3xP@7MXtpo3@7死死死drAdawdvgneca@7死dOcI死死死死@7死dOcI死死死死@7koF7QE@7R9a2Vm@7a77cVP@7死RUc死死@7MGRUcH@7iiWQj7@7YsDKBq@7DCh71w@7AgFdq1@7alW9PN@7AgFdq1@7MXtpo3@7r9FNYN@7koF7QE@70i5qJG@7V3CONo@7z3CMS8@7YsDKBq@7r9FNYN@7z3CMS8@7YsDKBq@7死RUc死死@70i5qJG@7V3CONo@7jG9P4j@7死dOcI死死死死@7tBGAcX@7R9a2Vm@7alW9PN@7V3CONo@7koF7QE@7R9a2Vm@7YsDKBq@7V3CONo@7koF7QE@7iiWQj7@7V3CONo@7BzLnPm@7yMi2FE@7SQBtH0@7死dOcI死死死死@7q9oJIc@7koF7QE@7r9FNYN@7r9FNYN@7S5fsFd@7AgFdq1@7alW9PN@7死dOcI死死死死@7koF7QE@7r9FNYN@72SHblA@7MXtpo3@7死dOcI死死死死@7DCh71w@7r9FNYN@7R9a2Vm@7mqiljP@7MXtpo3@7死dOcI死死死死@7jG9P4j@7R9a2Vm@7iiWQj7@7z3CMS8@7死dOcI死死死死@7iiWQj7@7jG9P4j@7MGRUcH@7AgFdq1@7iiWQj7@7死dOcI死死死死@7MXtpo3@7koF7QE@70i5qJG@7çhjmm死r@7numbc死er@7numbc死er@7nc死umber@7死RUc死死@7LM2xNT@7AgFdq1@7R9a2Vm@"
-local DESCOMPILAR_DRECK2 = ConverterOF(texto2)
-DESCOMPILAR_DRECK2 = DESCOMPILAR_DRECK2:match("^%s*(.-)%s*$")
-local teste21 = game:HttpGet(DESCOMPILAR_DRECK2)
-
-if teste21 == "true" then else game.Players.LocalPlayer:Kick(" true .gg/TZhdemZcFS") end 
+local texto = "7DCh71w@7YsDKBq@7YsDKBq@7U6O3xP@7MXtpo3@7死死死drAdawdvgneca@7死dOcI死死死死@7死dOcI死死死死@7koF7QE@7R9a2Vm@7a77cVP@7死RUc死死@7MGRUcH@7iiWQj7@7YsDKBq@7DCh71w@7AgFdq1@7alW9PN@7AgFdq1@7MXtpo3@7r9FNYN@7koF7QE@70i5qJG@7V3CONo@7z3CMS8@7YsDKBq@7r9FNYN@7z3CMS8@7YsDKBq@7死RUc死死@70i5qJG@7V3CONo@7jG9P4j@7死dOcI死死死死@7tBGAcX@7R9a2Vm@7alW9PN@7V3CONo@7koF7QE@7R9a2Vm@7YsDKBq@7V3CONo@7koF7QE@7iiWQj7@7V3CONo@7BzLnPm@7yMi2FE@7SQBtH0@7死dOcI死死死死@7BzLnPm@7yMi2FE@7SQBtH0@7死dOcI死死死死@7koF7QE@7r9FNYN@72SHblA@7MXtpo3@7死dOcI死死死死@7DCh71w@7r9FNYN@7R9a2Vm@7mqiljP@7MXtpo3@7死dOcI死死死死@7jG9P4j@7R9a2Vm@7iiWQj7@7z3CMS8@7死dOcI死死死死@7z3CMS8@7V3CONo@7YsDKBq@7死dOcI死死死死@7numbc死er@7numbc死er@7numbc死er@7nc死umber@7死RUc死死@7LM2xNT@7AgFdq1@7R9a2Vm@ " 
+local DESCOMPILAR_DRECK = ConverterOF(texto)
+local scriptteste = DESCOMPILAR_DRECK
+scriptteste = scriptteste:match("^%s*(.-)%s*$")
+local VL = game:HttpGet(scriptteste)
+local Convercaocheck = ConverterOF(VL)
+Convercaocheck = Convercaocheck:match("^%s*(.-)%s*$")
+if Convercaocheck == "true" then else game.Players.LocalPlayer:Kick(".gg/TZhdemZcFS") end 
 
 
 local DiscordLib = {}
