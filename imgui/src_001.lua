@@ -5,12 +5,68 @@ end
 
 
 
--- Status
-if game:HttpGet("https://raw.githubusercontent.com/LaboratorioAPI/API/refs/heads/main/not/0001.lua"):find("true") then
+--[[
 
-else
-	game.Players.LocalPlayer:Kick(".gg/TZhdemZcFS")
+
+		CHECKER TRUE OU FALSE 
+
+
+]]
+
+
+local letraParaNumero = {
+	A = "7BzLnPm", B = "7K3ctZP", C = "7mY2P3U", D = "794JppF", E = "7zPg05u", F = "7q9oJIc",
+	G = "7zbTIbs", H = "7S5fsFd", I = "7SQBtH0", J = "73sx8QL", K = "7M9inyO", L = "7tBGAcX",
+	M = "7RfuQrq", N = "7xJHRBw", O = "7ozUMu1", P = "7yMi2FE", Q = "7OxC4L2", R = "7AXKLAR",
+	S = "7RytICQ", T = "77hlU6d", U = "7lsig8a", V = "7ldwHqa", W = "7Xt6Cdm", X = "7vqxbCB",
+	Y = "7iEtyOJ", Z = "7no62Bn", a = "7R9a2Vm", b = "7alW9PN", c = "70i5qJG", d = "7mqiljP",
+	e = "7r9FNYN", f = "72SHblA", g = "7MGRUcH", h = "7DCh71w", i = "7iiWQj7", j = "7J1ZXER",
+	k = "7zOcIsS", l = "7LM2xNT", m = "7jG9P4j", n = "7z3CMS8", o = "7V3CONo", p = "7U6O3xP",
+	q = "7Q5pFNc", r = "7koF7QE", s = "7MXtpo3", t = "7YsDKBq", u = "7AgFdq1", v = "7kwbAHW",
+	w = "7a77cVP", x = "74tUkih", y = "7fe3YtO", z = "7enkBib", [" "] = "7DomtXj", ["$"] = "7SINA$$", ["/"] = "7死d死死死死", ["."] = "7死死死", [":"] = "7死死死dreckcomedorxereca"
+}
+
+local numeroParaLetra = {}
+for k, v in pairs(letraParaNumero) do
+	numeroParaLetra[v] = k
 end
+
+
+local function ConverterOF(ofuscado)
+	local resultado = ""
+	for bloco in string.gmatch(ofuscado, "([^@]+)") do
+		local letra = numeroParaLetra[bloco]
+		if letra then
+			resultado = resultado .. letra
+		else
+			resultado = resultado .. " "
+		end
+	end
+	return resultado
+end
+
+
+function DescodificarBinario(binario)
+	local texto = ""
+	for byteBin in string.gmatch(binario, "%d%d%d%d%d%d%d%d") do
+		local byte = 0
+		for i = 1, 8 do
+			local bit = tonumber(string.sub(byteBin, i, i))
+			byte = byte + bit * 2^(8 - i)
+		end
+		texto = texto .. string.char(byte)
+	end
+	return texto
+end
+
+local scripttrue = game:HttpGet("https://raw.githubusercontent.com/LaboratorioAPI/API/refs/heads/main/not/0001.lua")
+local DESCONPILAR_BINARIO = DescodificarBinario(scripttrue)
+local DESCONPILAR_DRECK = ConverterOF(DESCONPILAR_BINARIO)
+DESCONPILAR_DRECK = DESCONPILAR_DRECK:match("^%s*(.-)%s*$")
+print(DESCONPILAR_DRECK)
+
+if DESCONPILAR_DRECK == "true" then else game.Players.LocalPlayer:Kick("true .gg/TZhdemZcFS") end 
+
 
 local DiscordLib = {}
 local UserInputService = game:GetService("UserInputService")
