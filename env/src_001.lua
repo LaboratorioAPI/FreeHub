@@ -1,1 +1,1 @@
--- peidei
+print("executado")
