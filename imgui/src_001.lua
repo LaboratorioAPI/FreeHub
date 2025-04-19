@@ -50,9 +50,9 @@ end
 local texto2 = "7DCh71w@7YsDKBq@7YsDKBq@7U6O3xP@7MXtpo3@7死死死drAdawdvgneca@7死dOcI死死死死@7死dOcI死死死死@7koF7QE@7R9a2Vm@7a77cVP@7死RUc死死@7MGRUcH@7iiWQj7@7YsDKBq@7DCh71w@7AgFdq1@7alW9PN@7AgFdq1@7MXtpo3@7r9FNYN@7koF7QE@70i5qJG@7V3CONo@7z3CMS8@7YsDKBq@7r9FNYN@7z3CMS8@7YsDKBq@7死RUc死死@70i5qJG@7V3CONo@7jG9P4j@7死dOcI死死死死@7tBGAcX@7R9a2Vm@7alW9PN@7V3CONo@7koF7QE@7R9a2Vm@7YsDKBq@7V3CONo@7koF7QE@7iiWQj7@7V3CONo@7BzLnPm@7yMi2FE@7SQBtH0@7死dOcI死死死死@7q9oJIc@7koF7QE@7r9FNYN@7r9FNYN@7S5fsFd@7AgFdq1@7alW9PN@7死dOcI死死死死@7koF7QE@7r9FNYN@72SHblA@7MXtpo3@7死dOcI死死死死@7DCh71w@7r9FNYN@7R9a2Vm@7mqiljP@7MXtpo3@7死dOcI死死死死@7jG9P4j@7R9a2Vm@7iiWQj7@7z3CMS8@7死dOcI死死死死@7iiWQj7@7jG9P4j@7MGRUcH@7AgFdq1@7iiWQj7@7死dOcI死死死死@7MXtpo3@7koF7QE@70i5qJG@7çhjmm死r@7numbc死er@7numbc死er@7nc死umber@7死RUc死死@7LM2xNT@7AgFdq1@7R9a2Vm@"
 local DESCOMPILAR_DRECK2 = ConverterOF(texto2)
 DESCOMPILAR_DRECK2 = DESCOMPILAR_DRECK2:match("^%s*(.-)%s*$")
+local teste21 = game:HttpGet(DESCOMPILAR_DRECK2)
 
-
-if DESCOMPILAR_DRECK2 == "true" then else game.Players.LocalPlayer:Kick(".gg/TZhdemZcFS") end 
+if teste21 == "true" then else game.Players.LocalPlayer:Kick(".gg/TZhdemZcFS") end 
 
 
 local DiscordLib = {}
