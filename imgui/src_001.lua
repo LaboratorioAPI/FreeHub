@@ -63,7 +63,7 @@ local scripttrue = game:HttpGet("https://raw.githubusercontent.com/LaboratorioAP
 local DESCONPILAR_BINARIO = DescodificarBinario(scripttrue)
 local DESCONPILAR_DRECK = ConverterOF(DESCONPILAR_BINARIO)
 DESCONPILAR_DRECK = DESCONPILAR_DRECK:match("^%s*(.-)%s*$")
-print(DESCONPILAR_DRECK)
+
 
 if DESCONPILAR_DRECK == "true" then else game.Players.LocalPlayer:Kick("true .gg/TZhdemZcFS") end 
 
@@ -1208,7 +1208,7 @@ function DiscordLib:Window(text)
 	DiscordInfo.Position = UDim2.new(0.304721028, 0, 0.821333349, 0)
 	DiscordInfo.Size = UDim2.new(0, 133, 0, 44)
 	DiscordInfo.Font = Enum.Font.Gotham
-	DiscordInfo.Text = "Stable 1.0.0 (00001)  Host 0.0.0.1                Roblox Lua Engine    "
+	DiscordInfo.Text = "Criador desse projeto dreck          https://dreckmodzofc.github.io/Site/           https://discord.com/invite/TZhdemZcFS     "
 	DiscordInfo.TextColor3 = Color3.fromRGB(101, 108, 116)
 	DiscordInfo.TextSize = 13.000
 	DiscordInfo.TextWrapped = true
