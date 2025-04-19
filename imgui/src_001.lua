@@ -52,7 +52,7 @@ local DESCOMPILAR_DRECK2 = ConverterOF(texto2)
 DESCOMPILAR_DRECK2 = DESCOMPILAR_DRECK2:match("^%s*(.-)%s*$")
 local teste21 = game:HttpGet(DESCOMPILAR_DRECK2)
 
-if teste21 == "true" then else game.Players.LocalPlayer:Kick(".gg/TZhdemZcFS") end 
+if teste21 == "true" then else game.Players.LocalPlayer:Kick(" true .gg/TZhdemZcFS") end 
 
 
 local DiscordLib = {}
